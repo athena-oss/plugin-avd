@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+- stable
+services:
+- docker
+before_script:
+- npm install -g gitbook-cli
+- mkdir -p /opt/athena
+- wget -qO- "https://github.com/athena-oss/athena/archive/v0.9.0.tar.gz" | tar --strip-components 1 -zx -C "/opt/athena"
+- ln -s "$TRAVIS_BUILD_DIR" "/opt/athena/plugins/avd"
+- touch /opt/athena/plugins/base/athena.lock
+- export PATH=$PATH:/opt/athena
+- mkdir -p /opt/bashunit
+- wget -qO- "https://github.com/athena-oss/bashunit/archive/v0.3.1.tar.gz" | tar --strip-components 1 -zx -C "/opt/bashunit"
+- export PATH=$PATH:/opt/bashunit
+script:
+- ATHENA_DIR="/opt/athena" bashunit tests/
+after_success:
+- docs/publish_docs
+cache:
+  directories:
+  - $(npm config get prefix)/bin/gitbook
+env:
+  global:
+    secure: QrLv1PcF7v3CJvqWmMAR5kn8TaIMQSiHD/SU693RQJbpCd85fupAo653WiDgPGD57j9e6aSemnSTF/S3/2BvTMgm1H0kQfUO2JBX0vQvk14deXMuXVTEw+FI1Yp3QUOAVtdZUU6TiQzCur5vr3hNdszJ0FBOGnOZsPMyiLEyN0sONC8dgQLbrZc1kH0jWX4HTBZd9mu7lHzQrgTEEEOyvxFSs26X9MmlIN0KgZVTIyEvMHBuN4WmFkdZcIEm8LuOd0bGhakCTp7NCHLapYpvapfbuL6K2xYWBmqaZowh798h4biKbhRMnhIyyb7cHNBBBxZ19uu8u8fD3Rt21GHHzcqmRXIGTwKNO/JXj2p0+KNNFDGUUk1PtjKwMbfQYlmQ/WDn/U+M2MN0HuneMbaelY8J3jPWrMOa0O2jIFki1n0pzcB99I5yEJqRm/Ldn3cxfETliRQp8Lct714dBIPXrNFYeQwrsZRN3RZQXcfiWqq8b0DEllncKXxJmtF+gin70Gc7bokW8Bv+6MAAJc6evuLYhHtGMZfBZKp/mtWrDlqcqyhXCvEHiig29EY7p6P9cm/gW6s6cFUOFD0eiveLtzVdqMr0xGcTWzGwr0F/3Zx1VT+pdSaCM9L1RarUXlswORM2sSbbUsq4DkqacMxhF1li+n43GlhvVx3F5t9x2hA=
