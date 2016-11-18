@@ -1,0 +1,300 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Introduction · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+<style>
+.book-summary {
+  background-color:#13262f;
+  border-left-color: #344047;
+}
+
+.book-summary ul.summary li a,
+.book-summary ul.summary li span {
+	color: #FFF;
+}
+
+.book-summary ul.summary li.active > a {
+	color: #6c9ed0;
+}
+
+.book-header {
+	color: #7e888b;
+	background-color: rgb(245, 245, 245);
+}
+
+.book-body {
+	background-color: #fafafa;
+}
+
+.markdown-section pre {
+	line-height: 1;
+	border: 1px solid #d8d6d6;
+}
+
+.page-inner h1,
+.page-inner h2,
+.page-inner h3,
+.page-inner h4,
+.page-inner h5,
+.page-inner h6 {
+	color: #098BCC;
+	font-weight:300;
+}
+
+#book-search-input {
+	color: rgb(54, 65, 73);
+	background-color: #2b3a42;
+}
+
+#book-search-input input, #book-search-input input:hover, #book-search-input input:focus {
+	color: #909394 !important;
+}
+
+</style>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="avd-plugin-">AVD Plugin <a href="https://travis-ci.org/athena-oss/plugin-avd" target="_blank"><img alt="Build Status" src="https://travis-ci.org/athena-oss/plugin-avd.svg?branch=master"></a></h1><p>This plugins provides a straightforward API to manage Android Virtual Devices.</p><p>You can easily use this plugin in your local development machine or in a CI/CD pipeline.</p><h2 id="how-to-install-">How to Install ?</h2><p>To install it simply run the following command :</p><pre><code class="lang-bash">$ athena plugins install avd https://github.com/athena-oss/plugin-avd.git</code></pre>
+<p>or</p><ul><li>On MAC OSX using <a href="http://brew.sh/" target="_blank">Homebrew</a> :
+<pre><code class="lang-bash">$ brew tap athena-oss/tap
+$ brew install plugin-avd</code></pre>
+</li></ul>
+<p>Read the <a href="http://athena-oss.github.io/plugin-avd" target="_blank">Documentation</a> on using the <a href="https://github.com/athena-oss/athena" target="_blank">Athena</a> AVD plugin.</p><h2 id="how-to-use-">How to Use ?</h2><p>This plugin provides the following commands:</p><h3 id="start---starts-the-avd">start - Starts the AVD</h3><pre><code class="lang-bash">$ athena avd start &lt;profile&gt; [--help|&lt;options&gt;...]
+
+$ <span class="hljs-comment"># e.g. start one of the pre-defined devices</span>
+$ athena avd start wxga720-api-24
+
+$ <span class="hljs-comment"># e.g. start a pre-defined device and open a VNC at port 9001</span>
+$ athena avd start wxga720-api-24 --vnc-port=9001</code></pre>
+<h3 id="stop---stops-the-avd">stop - Stops the AVD</h3><pre><code class="lang-bash">$ athena avd stop &lt;profile&gt; [--help|&lt;options&gt;...]
+
+$ <span class="hljs-comment"># e.g. stop a device that was started without any extra options</span>
+$ athena avd stop wxga720-api-24
+
+$ <span class="hljs-comment"># e.g. stop a device that was started with a VNC port at 9001</span>
+$ athena avd stop wxga720-api-24 --vnc-port=9001</code></pre>
+<h3 id="logs---retrieve-avd-logs">logs - Retrieve AVD logs</h3><pre><code class="lang-bash">$ athena avd logs &lt;profile&gt; [--help|&lt;options&gt;...]
+
+$ <span class="hljs-comment"># e.g. get logs from a device that was started without any extra options</span>
+$ athena avd logs wxga720-api-24
+
+$ <span class="hljs-comment"># e.g. get logs from a device that was started with a VNC port at 9001</span>
+$ athena avd logs wxga720-api-24 --vnc-port=9001</code></pre>
+<h3 id="terminal---starts-a-shell-inside-the-avd-container">terminal - Starts a shell inside the AVD container</h3><pre><code class="lang-bash">$ athena avd terminal &lt;profile&gt; [--help|&lt;options&gt;...]
+
+$ <span class="hljs-comment"># e.g. open a shell in a device that was started without any extra options</span>
+$ athena avd terminal wxga720-api-24
+
+$ <span class="hljs-comment"># e.g. open a shell in a device that was started with a VNC port at 9001</span>
+$ athena avd terminal wxga720-api-24 --vnc-port=9001</code></pre>
+<h3 id="cleanup---remove-avd-image-from-the-host-machine">cleanup - Remove AVD image from the host machine</h3><pre><code class="lang-bash">$ athena avd cleanup &lt;profile&gt;</code></pre>
+<h3 id="wizard---step-by-step-guide-to-create-a-new-device-profile">wizard - Step-by-step guide to create a new device profile</h3><pre><code class="lang-bash">$ athena avd wizard</code></pre>
+<h2 id="profiles-explained">Profiles Explained</h2><ul><li><code>api-&lt;level&gt;.conf</code> - Contains the Android SDK information for a given API level
+</li>
+<li><code>&lt;name&gt;.env</code> - Contains the device ABI, the name, skin information and which API level to use (based on the file above)
+</li></ul>
+<p>Both of these files are stored inside <a href="https://github.com/athena-oss/athena" target="_blank">Athena</a> plugins/avd/docker directory.</p><p>As soon as you add a new <code>.env</code> file inside the directory, mentioned above, it will be available for you automatically.</p><p>If you your device uses a API level and the <code>api-&lt;level&gt;.conf</code> does not exist, then you need to create it, otherwise the device will fail during build time.</p><p>You can also use <code>athena avd wizard</code> to create a device profile step-by-step.</p><h2 id="contributing">Contributing</h2><p>Checkout our guidelines on how to contribute in <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>.</p><h2 id="versioning">Versioning</h2><p>Releases are managed using github&apos;s release feature. We use <a href="http://semver.org" target="_blank">Semantic Versioning</a> for all
+the releases. Every change made to the code base will be referred to in the release notes (except for
+cleanups and refactorings).</p><h2 id="license">License</h2><p>Licensed under the <a href="LICENSE">Apache License Version 2.0 (APLv2)</a>.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2016-11-17T15:02:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-11-18T13:02:18.790Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
