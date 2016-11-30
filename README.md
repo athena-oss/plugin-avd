@@ -88,14 +88,14 @@ $ athena avd wizard
 
 ## Profiles Explained
 
-* `api-<level>.conf` - Contains the Android SDK information for a given API level
+* `android-<level>.conf` - Contains the Android SDK information for a given API level
 * `<name>.env` - Contains the device ABI, the name, skin information and which API level to use (based on the file above)
 
 Both of these files are stored inside [Athena](https://github.com/athena-oss/athena) plugins/avd/docker directory.
 
 As soon as you add a new `.env` file inside the directory, mentioned above, it will be available for you automatically.
 
-If you your device uses a API level and the `api-<level>.conf` does not exist, then you need to create it, otherwise the device will fail during build time.
+If you your device uses a API level and the `android-<level>.conf` does not exist, then you need to create it, otherwise the device will fail during build time.
 
 You can also use `athena avd wizard` to create a device profile step-by-step.
 

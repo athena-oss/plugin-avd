@@ -6,6 +6,7 @@ fi
 
 athena.usage 1 "<profile> [--help|<options>...]" "$(cat <<'EOF'
    [--emulator-opts="<args>..."] ; Extra options for the emulator.
+   [--emulator-name="<name>"]    ; Emulator binary name, by default 'emulator64-arm' is used.
    [--vnc-port=<port>]           ; Port where the VNC will be listening at for connections.
    [--adb-port=<port>]           ; Port where the android debug bridge will be listening at.
    [--list-profiles]             ; Get a list of available profiles.
@@ -32,7 +33,8 @@ if athena.argument.argument_exists_and_remove "--adb-port" "adb_port"; then
 	instance_id="${instance_id}${adb_port}"
 fi
 
-if athena.argument.argument_exists_and_remove "--vnc-port" "vnc_port"; then
+if athena.arg_exists "--vnc-port"; then
+	vnc_port="$(athena.argument.get_argument --vnc-port)"
 	athena.docker.add_option "-p ${vnc_port}:5900"
 	instance_id="${instance_id}${vnc_port}"
 fi
