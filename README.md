@@ -6,18 +6,29 @@ You can easily use this plugin in your local development machine or in a CI/CD p
 
 ## How to Install ?
 
-To install it simply run the following command :
+**On Linux**
+
+* Using `apt-get` :
 
 ```bash
-$ athena plugins install avd https://github.com/athena-oss/plugin-avd.git
+$ sudo add-apt-repository ppa:athena-oss/athena
+$ sudo apt-get update
+$ sudo apt-get install athena-plugin-avd
 ```
 
-or
+**On MAC OSX**
 
-* On MAC OSX using [Homebrew](http://brew.sh/) :
+* Using [Homebrew](http://brew.sh/) :
+
 ```bash
 $ brew tap athena-oss/tap
 $ brew install plugin-avd
+```
+
+**Alternative**
+
+```bash
+$ athena plugins install avd https://github.com/athena-oss/plugin-avd.git
 ```
 
 Read the [Documentation](http://athena-oss.github.io/plugin-avd) on using the [Athena](https://github.com/athena-oss/athena) AVD plugin.
